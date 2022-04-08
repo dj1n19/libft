@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 14:06:16 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/06 17:55:30 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/09 01:19:38 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return ((char *)haystack);
 	while (*haystack && i < len)
 	{
-		while (*begin == *needle)
+		while (*begin == *needle && i++ < len)
 		{
 			if (!*(needle + 1))
 				return ((char *)haystack);

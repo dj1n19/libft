@@ -6,12 +6,20 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 14:44:30 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/08 13:54:21 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/09 00:51:35 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
+
+static int	ft_isspace(char c)
+{
+	if (c == ' ')
+		return (1);
+	if (c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v')
+		return (1);
+	return (0);
+}
 
 int	ft_atoi(const char *str)
 {
@@ -20,7 +28,9 @@ int	ft_atoi(const char *str)
 
 	nbr = 0;
 	is_neg = 0;
-	while (!ft_isprint(*str))
+	if (!*str)
+		return (0);
+	while (ft_isspace(*str))
 		str++;
 	if (*str == '+' || *str == '-')
 	{
@@ -30,24 +40,11 @@ int	ft_atoi(const char *str)
 	}
 	while (*str && *str >= 48 && *str <= 57)
 	{
+		nbr *= 10;
 		if (is_neg == 1)
 			nbr -= *str++ - 48;
 		else
 			nbr += *str++ - 48;
-		nbr *= 10;
 	}
-	nbr /= 10;
-	if (is_neg == 1)
-		return (-nbr);
 	return (nbr);
 }
-/*#include <string.h>
-int main()
-{
-	const char e[] = {9, 10, 11, 12, 13, 0};
-	char	*s = ft_strjoin(e, "-2147483648");
-	printf("%s\n", s);
-	printf("%d\n", ft_atoi(s));
-	free(s);
-	return 0;
-}*/
