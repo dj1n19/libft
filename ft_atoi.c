@@ -6,12 +6,12 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 14:44:30 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/07 16:03:36 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/08 13:54:21 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 int	ft_atoi(const char *str)
 {
@@ -41,7 +41,7 @@ int	ft_atoi(const char *str)
 		return (-nbr);
 	return (nbr);
 }
-#include <string.h>
+/*#include <string.h>
 int main()
 {
 	const char e[] = {9, 10, 11, 12, 13, 0};
@@ -50,4 +50,4 @@ int main()
 	printf("%d\n", ft_atoi(s));
 	free(s);
 	return 0;
-}
+}*/
