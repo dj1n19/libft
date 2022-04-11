@@ -6,11 +6,10 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:47:18 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/09 00:05:38 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/11 02:33:09 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int	ft_is_in_set(char c, char const *set)
@@ -64,7 +63,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	s1 = check_char_begin(s1, set);
 	end_trim_str = check_char_end(s1, set);
-	new_str = malloc(end_trim_str + 1);
+	new_str = malloc(end_trim_str + 2);
 	if (!new_str)
 		return (NULL);
 	while (i <= end_trim_str)

@@ -6,11 +6,10 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 09:48:58 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/08 15:59:46 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/11 02:32:42 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int	ft_count_word(const char *s, char c)
@@ -43,8 +42,6 @@ static char	*ft_word_extract(const char *s, char c)
 
 	start = s;
 	i = 0;
-	while (*s == c)
-		s++;
 	while (*s && *s != c)
 	{
 		i++;

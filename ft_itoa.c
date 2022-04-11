@@ -6,11 +6,10 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 10:30:24 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/07 15:17:50 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/11 02:31:31 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int	ft_nbr_size(int n)
