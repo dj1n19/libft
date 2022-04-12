@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:47:18 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/11 02:33:09 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/12 14:00:39 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*new_str;
 	int		end_trim_str;
 
+	if (!s1 || !set)
+		return (NULL);
 	i = 0;
 	s1 = check_char_begin(s1, set);
 	end_trim_str = check_char_end(s1, set);

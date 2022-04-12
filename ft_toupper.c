@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 14:51:05 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/05 19:28:24 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/11 14:22:38 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	ft_toupper(int c)
 {
-	if ((unsigned char) c >= 97 && (unsigned char) c <= 122)
+	if (c < 0 || c > 127)
+		return (c);
+	if ((unsigned char) c >= 'a' && (unsigned char) c <= 'z')
 		return (c - 32);
 	return (c);
 }

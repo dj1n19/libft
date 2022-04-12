@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 15:41:02 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/06 14:38:34 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/11 14:06:07 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*cdst;
 
 	cdst = dst;
+	if (!dst && !src)
+		return (NULL);
 	if (dst < src)
 	{
 		while (len--)

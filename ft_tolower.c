@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 14:55:01 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/05 14:49:47 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/11 14:23:03 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	ft_tolower(int c)
 {
-	if ((unsigned char) c >= 65 && (unsigned char) c <= 90)
+	if (c < 0 || c > 127)
+		return (c);
+	if ((unsigned char) c >= 'A' && (unsigned char) c <= 'Z')
 		return (c + 32);
 	return (c);
 }

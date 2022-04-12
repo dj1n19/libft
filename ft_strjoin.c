@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:19:46 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/10 22:43:20 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/12 14:00:06 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*new_str;
 	int		i;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len = ft_strlen(s1);
 	len += ft_strlen(s2);
 	i = 0;

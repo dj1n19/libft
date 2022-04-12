@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:28:08 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/11 02:32:31 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/12 14:46:59 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,23 @@ static int	ft_nbr_size(int n)
 	return (size);
 }
 
+long int	ft_to_char(long int nbr)
+{
+	if (nbr < 0)
+		nbr = -nbr % 10 + 48;
+	else
+		nbr = nbr % 10 + 48;
+	return (nbr);
+}
+
 void	ft_putnbr_fd(int n, int fd)
 {
 	char		digits[11];
 	long int	nbr;
 	int			i;
 
+	if (fd < 0)
+		return ;
 	i = ft_nbr_size(n);
 	if (i == 0)
 	{
@@ -46,12 +57,8 @@ void	ft_putnbr_fd(int n, int fd)
 		write(fd, "-", 1);
 	while (nbr != 0)
 	{
-		if (nbr < 0)
-			digits[i] = -nbr % 10 + 48;
-		else
-			digits[i] = nbr % 10 + 48;
+		digits[i--] = ft_to_char(nbr);
 		nbr /= 10;
-		i--;
 	}
 	ft_putstr_fd(digits, fd);
 }

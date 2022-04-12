@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 14:44:30 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/09 00:51:35 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/11 16:19:36 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,21 @@ static int	ft_isspace(char c)
 	return (0);
 }
 
+static const char	*ft_getsign(const char *s, int *is_neg)
+{
+	if (*s == '+' || *s == '-')
+	{
+		if (*s == '-')
+			*is_neg = 1;
+		s++;
+	}
+	return (s);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	nbr;
-	int	is_neg;
+	long	nbr;
+	int		is_neg;
 
 	nbr = 0;
 	is_neg = 0;
@@ -32,19 +43,18 @@ int	ft_atoi(const char *str)
 		return (0);
 	while (ft_isspace(*str))
 		str++;
-	if (*str == '+' || *str == '-')
-	{
-		if (*str == '-')
-			is_neg = 1;
-		str++;
-	}
+	str = ft_getsign(str, &is_neg);
 	while (*str && *str >= 48 && *str <= 57)
 	{
-		nbr *= 10;
-		if (is_neg == 1)
-			nbr -= *str++ - 48;
-		else
-			nbr += *str++ - 48;
+		nbr += *str++ - 48;
+		if (*str >= 48 && *str <= 57)
+			nbr *= 10;
 	}
+	if (is_neg == 1 && (-nbr) > 2147483648)
+		return (0);
+	if (is_neg == 0 && (-nbr) > 2147483647)
+		return (-1);
+	if (is_neg == 1)
+		return (-nbr);
 	return (nbr);
 }

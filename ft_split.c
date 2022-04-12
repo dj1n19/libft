@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 09:48:58 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/11 02:32:42 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/12 14:25:07 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,19 @@ static char	*ft_word_extract(const char *s, char c)
 	return (word);
 }
 
+static void	ft_free_strings_array(char **strings_array)
+{
+	while (*strings_array)
+		free(*strings_array++);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**strings_array;
 	char	**sa_start;
 
+	if (!s)
+		return (NULL);
 	strings_array = malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
 	if (!strings_array)
 		return (NULL);
@@ -68,9 +76,11 @@ char	**ft_split(char const *s, char c)
 			break ;
 		*strings_array = ft_word_extract(s, c);
 		if (!*strings_array)
+		{
+			ft_free_strings_array(sa_start);
 			return (NULL);
-		s += ft_strlen(*strings_array);
-		strings_array++;
+		}
+		s += ft_strlen(*strings_array++);
 	}
 	*strings_array = NULL;
 	return (sa_start);

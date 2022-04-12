@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 11:22:37 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/11 02:32:37 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/12 13:58:07 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (!s || fd < 0)
+		return ;
 	while (s[i])
 		ft_putchar_fd(s[i++], fd);
 }
