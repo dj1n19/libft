@@ -14,7 +14,9 @@ OBJS_BONUS = $(BONUS:.c=.o)
 
 NAME = libft.a
 
-all:		$(NAME)
+all:		$(OBJS) $(OBJS_BONUS)
+				ar -rc $(NAME) $(OBJS) $(OBJS_BONUS)
+				ranlib $(NAME)
 
 $(NAME):	$(OBJS)
 				ar -rc $(NAME) $(OBJS)
@@ -31,4 +33,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus
