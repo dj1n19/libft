@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: bgenie <bgenie@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 13:47:10 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/06 15:28:05 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/10/11 16:49:35 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,12 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+// int main(void)
+// {
+// 	printf("%s\n", strchr("gnah", 158));
+// 	printf("%s\n", ft_strchr("gnah", 158));
+// 	return 0;
+// }

@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 14:44:30 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/11 16:19:36 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/10/14 18:50:40 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ static const char	*ft_getsign(const char *s, int *is_neg)
 	return (s);
 }
 
+#include <string.h>
+#include <stdio.h>
 int	ft_atoi(const char *str)
 {
 	long	nbr;
@@ -58,3 +60,15 @@ int	ft_atoi(const char *str)
 		return (-nbr);
 	return (nbr);
 }
+
+
+#include <stdio.h>
+int main(int argc, char **argv)
+{
+	(void) argc;
+	printf("%d\n", atoi(*++argv));
+	printf("%d\n", atoi(*argv));
+	return (0);
+}
+
+

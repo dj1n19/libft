@@ -6,7 +6,7 @@
 /*   By: bgenie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 09:48:58 by bgenie            #+#    #+#             */
-/*   Updated: 2022/04/12 14:25:07 by bgenie           ###   ########.fr       */
+/*   Updated: 2022/04/14 22:31:20 by bgenie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ static void	ft_free_strings_array(char **strings_array)
 {
 	while (*strings_array)
 		free(*strings_array++);
+	free(strings_array);
 }
 
 char	**ft_split(char const *s, char c)
